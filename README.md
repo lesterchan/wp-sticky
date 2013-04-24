@@ -24,7 +24,9 @@ It is the exact same readme.html is included in the zip package.
 
 ## Screenshots
 
-[WP-Sticky Screenshots](http://lesterchan.net/wordpress/screenshots/browse/wp-sticky/ "WP-Sticky Screenshots")
+1. Sticky Post
+2. Announcement Post
+3. Admin - Sticky Options
 
 ## Frequently Asked Questions
 
