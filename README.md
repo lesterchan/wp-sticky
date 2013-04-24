@@ -5,7 +5,7 @@ Tags: sticky, post, announcement, sticky post, stick, important, adhesive
 Requires at least: 2.7  
 Stable tag: trunk  
 
-Adds a sticky post feature to your WordPress's blog.
+[DEPRECATED] Adds a sticky post feature to your WordPress's blog.
 
 ## Description
 
