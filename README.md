@@ -16,14 +16,13 @@ It is the exact same readme.html is included in the zip package.
 ### Build Status
 [![Build Status](https://travis-ci.org/lesterchan/wp-sticky.svg?branch=master)](https://travis-ci.org/lesterchan/wp-sticky)
 
-## Development Blog
+### Development Blog
 [GaMerZ WordPress Plugins Development Blog](http://lesterchan.net/wordpress/ "GaMerZ WordPress Plugins Development Blog")
 
 ## Installation
 [WP-Sticky Readme](http://lesterchan.net/wordpress/readme/wp-sticky.html "WP-Sticky Readme") (Installation Tab)
 
 ## Changelog
-
 ### Version 1.50 (01-06-2009)
 FIXED: Ensure That Post Is Not A Revision
 FIXED: Uses $_SERVER['PHP_SELF'] With plugin_basename(__FILE__) Instead Of Just $_SERVER['REQUEST_URI']
@@ -52,11 +51,9 @@ NEW: Moved Sticky Options From sticky.php To sticky-options.php
 NEW: Initial Release
 
 ## Screenshots
-
 1. Sticky Post
 2. Announcement Post
 3. Admin - Sticky Options
 
 ## Frequently Asked Questions
-
 [WP-Sticky Support Forums](http://forums.lesterchan.net/index.php?board=26.0 "WP-Sticky Support Forums")
