@@ -8,10 +8,7 @@ Stable tag: trunk
 [DEPRECATED] Adds a sticky post feature to your WordPress's blog.
 
 ## Description
-Modified from Adhesive by Owen Winkler.
-
-All the information (general, changelog, installation, upgrade, usage) you need about this plugin can be found here: [WP-Sticky Readme](http://lesterchan.net/wordpress/readme/wp-sticky.html "WP-Sticky Readme").
-It is the exact same readme.html is included in the zip package.
+Adds a sticky post feature to your WordPress's blog. Modified from Adhesive by Owen Winkler.
 
 ### Build Status
 [![Build Status](https://travis-ci.org/lesterchan/wp-sticky.svg?branch=master)](https://travis-ci.org/lesterchan/wp-sticky)
@@ -57,6 +54,3 @@ NEW: Initial Release
 1. Sticky Post
 2. Announcement Post
 3. Admin - Sticky Options
-
-## Frequently Asked Questions
-[WP-Sticky Support Forums](http://forums.lesterchan.net/index.php?board=26.0 "WP-Sticky Support Forums")
