@@ -17,10 +17,13 @@ It is the exact same readme.html is included in the zip package.
 [![Build Status](https://travis-ci.org/lesterchan/wp-sticky.svg?branch=master)](https://travis-ci.org/lesterchan/wp-sticky)
 
 ### Development Blog
-[GaMerZ WordPress Plugins Development Blog](http://lesterchan.net/wordpress/ "GaMerZ WordPress Plugins Development Blog")
+[https://github.com/lesterchan/wp-sticky](https://github.com/lesterchan/wp-sticky "https://github.com/lesterchan/wp-sticky")
 
-## Installation
-[WP-Sticky Readme](http://lesterchan.net/wordpress/readme/wp-sticky.html "WP-Sticky Readme") (Installation Tab)
+### Credits
+* Plugin icon by [Freepik](http://www.freepik.com) from [Flaticon](http://www.flaticon.com)
+
+### Donations
+I spent most of my free time creating, updating, maintaining and supporting these plugins, if you really love my plugins and could spare me a couple of bucks, I will really appericiate it. If not feel free to use it without any obligations.
 
 ## Changelog
 ### Version 1.50 (01-06-2009)
