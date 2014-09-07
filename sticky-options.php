@@ -1,22 +1,4 @@
 <?php
-/*
-+----------------------------------------------------------------+
-|																							|
-|	WordPress 2.7 Plugin: WP-Sticky 1.50										|
-|	Copyright (c) 2009 Lester "GaMerZ" Chan									|
-|																							|
-|	File Written By:																	|
-|	- Lester "GaMerZ" Chan															|
-|	- http://lesterchan.net															|
-|																							|
-|	File Information:																	|
-|	- WP-Sticky Options																|
-|	- wp-content/plugins/wp-sticky/sticky-options.php					|
-|																							|
-+----------------------------------------------------------------+
-*/
-
-
 ### Check Whether User Can Manage Sticky Options
 if(!current_user_can('manage_options')) {
 	die('Access Denied');
@@ -38,7 +20,7 @@ if(!empty($_POST['Submit'])) {
 	$text = '';
 	$sticky_options['display_date'] = intval($_POST['display_date']);
 	$sticky_options['category_only'] = intval($_POST['category_only']);
-	$sticky_options['announcement_banner'] = trim($_POST['announcement_banner']);		
+	$sticky_options['announcement_banner'] = addslashes(trim($_POST['announcement_banner']));		
 	$update_sticky_options = update_option('sticky_options', $sticky_options);
 	if($update_sticky_options) {
 		$text = '<font color="green">'.__('Sticky Options Updated', 'wp-sticky').'</font>';
@@ -131,7 +113,7 @@ switch($mode) {
 		<tr>
 			<th scope="row" valign="top"><?php _e('Announcement Banner:', 'wp-sticky'); ?></th>
 			<td>
-				<input type="text" name="announcement_banner" size="60" value="<?php echo htmlspecialchars($sticky_options['announcement_banner']); ?>" />
+				<input type="text" name="announcement_banner" size="60" value="<?php echo htmlspecialchars(stripslashes($sticky_options['announcement_banner'])); ?>" />
 				<br /><?php _e('This banner is displayed instead of the date if you choose \'No\' for <strong>Display Date</strong>.', 'wp-sticky'); ?>
 			</td>
 		</tr>

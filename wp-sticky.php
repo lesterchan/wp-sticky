@@ -3,14 +3,15 @@
 Plugin Name: WP-Sticky
 Plugin URI: http://lesterchan.net/portfolio/programming/php/
 Description: Adds a sticky post feature to your WordPress's blog. Modified from Adhesive by Owen Winkler.
-Version: 1.50
+Version: 1.51
 Author: Lester 'GaMerZ' Chan
 Author URI: http://lesterchan.net
+Text Domain: wp-sticky
 */
 
 
 /*  
-	Copyright 2009  Lester Chan  (email : lesterchan@gmail.com)
+	Copyright 2014  Lester Chan  (email : lesterchan@gmail.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -29,9 +30,9 @@ Author URI: http://lesterchan.net
 
 
 ### Create Text Domain For Translations
-add_action('init', 'sticky_textdomain');
+add_action( 'plugins_loaded', 'sticky_textdomain' );
 function sticky_textdomain() {
-	load_plugin_textdomain('wp-sticky', false, 'wp-sticky');
+	load_plugin_textdomain( 'wp-sticky', false, dirname( plugin_basename( __FILE__ ) ) );
 }
 
 
@@ -186,7 +187,7 @@ function sticky_the_date($content) {
 			return;
 		} else {
 			$printed_announcement = true;
-			return get_sticky_option('announcement_banner');
+			return stripslashes(get_sticky_option('announcement_banner'));
 		}
 	}
 	return $content;
@@ -194,11 +195,11 @@ function sticky_the_date($content) {
 
 
 ### Function: Sticky The Title
-add_filter('the_title', 'sticky_the_title');
-function sticky_the_title($content) {
+add_filter( 'the_title', 'sticky_the_title', 10, 2 );
+function sticky_the_title( $content, $id ) {
 	global $post;
-	if(strpos($_SERVER['REQUEST_URI'], '/edit.php') !== false && ($post->sticky_status > 0)) {
-		 $content = post_sticky_status('', '', false).': '.$content;
+	if ( $id === $post->ID && $post->sticky_status > 0 ) {
+		return post_sticky_status( '', '', false ) . ': ' . $content;
 	}
 	return $content;
 }
@@ -210,10 +211,10 @@ function sticky_the_content($content) {
 	global $post;
 	switch($post->sticky_status) {
 		case 1:
-			return '<div class="sticky_post">'.$content.'</div>'."\n";
+			return '<div class="sticky-post">'.$content.'</div>'."\n";
 			break;
 		case 2:
-			return '<div class="announcement_post">'.$content.'</div>'."\n";
+			return '<div class="announcement-post">'.$content.'</div>'."\n";
 			break;
 		default:
 			return $content;

@@ -2,7 +2,8 @@
 Contributors: GamerZ  
 Donate link: http://lesterchan.net/site/donation/  
 Tags: sticky, post, announcement, sticky post, stick, important, adhesive  
-Requires at least: 2.7  
+Requires at least: 3.3  
+Tested up to: 4.0  
 Stable tag: trunk  
 
 [DEPRECATED] Adds a sticky post feature to your WordPress's blog.
@@ -23,6 +24,10 @@ Adds a sticky post feature to your WordPress's blog. Modified from Adhesive by O
 I spent most of my free time creating, updating, maintaining and supporting these plugins, if you really love my plugins and could spare me a couple of bucks, I will really appericiate it. If not feel free to use it without any obligations.
 
 ## Changelog
+### Version 1.51
+FIXED: Allow HTML in Announcement Banner
+FIXED: Post Stick Status not showing before title
+
 ### Version 1.50 (01-06-2009)
 FIXED: Ensure That Post Is Not A Revision
 FIXED: Uses $_SERVER['PHP_SELF'] With plugin_basename(__FILE__) Instead Of Just $_SERVER['REQUEST_URI']
@@ -51,6 +56,7 @@ NEW: Moved Sticky Options From sticky.php To sticky-options.php
 NEW: Initial Release
 
 ## Screenshots
-1. Sticky Post
-2. Announcement Post
-3. Admin - Sticky Options
+1. Admin - Assign Sticky Status To Post
+2. Admin - Sticky Options
+3. Announcement Post
+4. Sticky Post
