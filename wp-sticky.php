@@ -3,7 +3,7 @@
 Plugin Name: WP-Sticky
 Plugin URI: http://lesterchan.net/portfolio/programming/php/
 Description: Adds a sticky post feature to your WordPress's blog. Modified from Adhesive by Owen Winkler.
-Version: 1.51
+Version: 1.52
 Author: Lester 'GaMerZ' Chan
 Author URI: http://lesterchan.net
 Text Domain: wp-sticky
@@ -173,7 +173,6 @@ function announcement_banner($display = true) {
 			}
 		}
 	}
-	return $content;
 }
 
 
@@ -196,7 +195,7 @@ function sticky_the_date($content) {
 
 ### Function: Sticky The Title
 add_filter( 'the_title', 'sticky_the_title', 10, 2 );
-function sticky_the_title( $content, $id ) {
+function sticky_the_title( $content, $id = null ) {
 	global $post;
 	if ( $id === $post->ID && $post->sticky_status > 0 ) {
 		return post_sticky_status( '', '', false ) . ': ' . $content;

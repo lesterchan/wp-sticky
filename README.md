@@ -24,6 +24,9 @@ Adds a sticky post feature to your WordPress's blog. Modified from Adhesive by O
 I spent most of my free time creating, updating, maintaining and supporting these plugins, if you really love my plugins and could spare me a couple of bucks, I will really appericiate it. If not feel free to use it without any obligations.
 
 ## Changelog
+### Version 1.52
+FIXED: Missing argument 2 for sticky_the_title()
+
 ### Version 1.51
 FIXED: Allow HTML in Announcement Banner
 FIXED: Post Stick Status not showing before title
