@@ -3,7 +3,7 @@ Contributors: GamerZ
 Donate link: http://lesterchan.net/site/donation/  
 Tags: sticky, post, announcement, sticky post, stick, important, adhesive  
 Requires at least: 3.3  
-Tested up to: 4.0  
+Tested up to: 4.1  
 Stable tag: trunk  
 
 [DEPRECATED] Adds a sticky post feature to your WordPress's blog.
@@ -25,6 +25,8 @@ I spent most of my free time creating, updating, maintaining and supporting thes
 
 ## Changelog
 ### Version 1.52
+NEW: Supports WordPress Multisite Network Activation
+NEW: Uses WordPress native uninstall.php
 FIXED: Missing argument 2 for sticky_the_title()
 
 ### Version 1.51

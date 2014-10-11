@@ -44,9 +44,7 @@ $wpdb->sticky = $wpdb->prefix.'sticky';
 ### Function: Sticky Option Menu
 add_action('admin_menu', 'sticky_menu');
 function sticky_menu() {
-	if (function_exists('add_options_page')) {
-		add_options_page(__('WP-Sticky', 'wp-sticky'), __('WP-Sticky', 'wp-sticky'), 'manage_options', 'wp-sticky/sticky-options.php');
-	}
+	add_options_page(__('WP-Sticky', 'wp-sticky'), __('WP-Sticky', 'wp-sticky'), 'manage_options', 'wp-sticky/sticky-options.php');
 }
 
 
@@ -278,12 +276,35 @@ add_action('admin_menu', 'sticky_add_meta_box');
 function sticky_add_meta_box() {
 	add_meta_box('poststickystatusdiv', __('Post Sticky Status', 'wp-sticky'), 'sticky_metabox_admin', 'post', 'side');
 }
- 
 
-### Function: Sticky Init
-add_action('activate_wp-sticky/wp-sticky.php', 'sticky_init');
-function sticky_init() {
+
+### Function: Activate Plugin
+register_activation_hook( __FILE__, 'sticky_activation' );
+function sticky_activation( $network_wide )
+{
+	if ( is_multisite() && $network_wide )
+	{
+		$ms_sites = wp_get_sites();
+
+		if( 0 < sizeof( $ms_sites ) )
+		{
+			foreach ( $ms_sites as $ms_site )
+			{
+				switch_to_blog( $ms_site['blog_id'] );
+				sticky_activate();
+			}
+		}
+
+		restore_current_blog();
+	}
+	else
+	{
+		sticky_activate();
+	}
+}
+function sticky_activate() {
 	global $wpdb;
+
 	if(@is_file(ABSPATH.'/wp-admin/upgrade-functions.php')) {
 		include_once(ABSPATH.'/wp-admin/upgrade-functions.php');
 	} elseif(@is_file(ABSPATH.'/wp-admin/includes/upgrade.php')) {
@@ -291,6 +312,7 @@ function sticky_init() {
 	} else {
 		die('We have problem finding your \'/wp-admin/upgrade-functions.php\' and \'/wp-admin/includes/upgrade.php\'');
 	}
+
 	// Create Sticky Table
 	$create_sticky_sql = "CREATE TABLE $wpdb->sticky (".
 								"sticky_post_id bigint(20) NOT NULL,".
