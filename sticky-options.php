@@ -15,7 +15,7 @@ if( ! empty( $_POST['Submit'] ) ) {
 	$sticky_options['display_date'] = intval( $_POST['display_date'] );
 	$sticky_options['display_before_title'] = intval( $_POST['display_before_title'] );
 	$sticky_options['category_only'] = intval( $_POST['category_only'] );
-	$sticky_options['announcement_banner'] = addslashes( trim( $_POST['announcement_banner'] ) );
+	$sticky_options['announcement_banner'] = trim( $_POST['announcement_banner'] );
 	$update_sticky_options = update_option( 'sticky_options', $sticky_options );
 	if( $update_sticky_options ) {
 		$text = '<p style="color: green">'.__( 'Sticky Options Updated', 'wp-sticky' ).'</p>';
