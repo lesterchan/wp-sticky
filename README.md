@@ -3,7 +3,7 @@ Contributors: GamerZ
 Donate link: http://lesterchan.net/site/donation/  
 Tags: sticky, post, announcement, sticky post, stick, important, adhesive  
 Requires at least: 3.3  
-Tested up to: 4.2  
+Tested up to: 4.3  
 Stable tag: trunk  
 
 [DEPRECATED] Adds a sticky post feature to your WordPress's blog.
@@ -24,6 +24,9 @@ Adds a sticky post feature to your WordPress's blog. Modified from Adhesive by O
 I spent most of my free time creating, updating, maintaining and supporting these plugins, if you really love my plugins and could spare me a couple of bucks, I will really appreciate it. If not feel free to use it without any obligations.
 
 ## Changelog
+### Version 1.53
+* FIXED: Not being able to sort Posts by date in WP-Admin
+
 ### Version 1.52
 * NEW: Add option to display sticky status (Sticky or Announcement) before post title
 * NEW: Supports WordPress Multisite Network Activation
