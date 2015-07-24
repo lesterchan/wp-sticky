@@ -113,6 +113,9 @@ function sticky_join( $content ) {
 }
 function sticky_orderby( $content ) {
 	global $wpdb;
+	if( is_admin() ) {
+		return $content;
+	}
 	$content = "($wpdb->sticky.sticky_status = 2 AND $wpdb->sticky.sticky_status IS NOT NULL) DESC, DATE_FORMAT($wpdb->posts.post_date,'%Y-%m-%d') DESC, ($wpdb->sticky.sticky_status = 1 AND $wpdb->sticky.sticky_status IS NULL) DESC, DATE_FORMAT($wpdb->posts.post_date,'%T') DESC";
 	return $content;
 }
