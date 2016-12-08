@@ -3,7 +3,7 @@ Contributors: GamerZ
 Donate link: http://lesterchan.net/site/donation/  
 Tags: sticky, post, announcement, sticky post, stick, important, adhesive  
 Requires at least: 3.3  
-Tested up to: 4.5  
+Tested up to: 4.7  
 Stable tag: trunk  
 
 [DEPRECATED] Adds a sticky post feature to your WordPress's blog.
